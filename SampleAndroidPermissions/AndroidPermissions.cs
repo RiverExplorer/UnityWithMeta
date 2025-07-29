@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Android;
 
-using RiverExplorer.Speech;
+//using RiverExplorer.Speech;
 
 namespace RiverExplorer.App
 {
@@ -77,13 +77,13 @@ namespace RiverExplorer.App
 
             RequestList.Add(EyeTrackingPermission_s);
 
-            if (HasEyeTracking && !HasEyeTracking) {
+            if (HasEyeTracking && !HaveEyeTrackingPermission) {
                 RequestList.Add(EyeTrackingPermission_s);
             }
-            if (HasBodyTracking && !HasBodyTracking) {
+            if (HasBodyTracking && !HaveBodyTrackingPermission) {
                 RequestList.Add(BodyTrackingPermission_s);
             }
-            if (HasFaceTracking && !HasFaceTracking) {
+            if (HasFaceTracking && !HaveFaceTrackingPermission) {
                 RequestList.Add(FaceTrackingPermission_s);
             }
             RequestList.Add(MicPermission_s);
@@ -114,14 +114,14 @@ namespace RiverExplorer.App
             HaveMicPermissions = Permission.HasUserAuthorizedPermission(Permission.Microphone);
 
             //#if SAY_FOUND_MIC
-            if (Microphone.devices.Length > 0) {
+            //if (Microphone.devices.Length > 0) {
 
                 //TextToSpeech.Announce("Found microphones.");
-            }
+            //}
 
-            foreach (string Mic in Microphone.devices) {
+            //foreach (string Mic in Microphone.devices) {
                 //TextToSpeech.Announce(Mic);
-            }
+            //}
             return (HaveMicPermissions);
         }
 
